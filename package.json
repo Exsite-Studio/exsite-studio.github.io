@@ -8,11 +8,11 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "prod": "NODE_ENV=production yarn gatsby build && cp CNAME public && cp robots.txt public && cp RefundPolicy.html public",
+    "clean": "gatsby clean",
+    "proxy": "netlify-cms-proxy-server",
+    "deploy": "rm -rf public .cache && rm -rf node_modules && rm package-lock.json && mkdir public && mkdir public/src && mkdir public/src/images && yarn prod"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
