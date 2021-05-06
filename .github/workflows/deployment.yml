@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          mv -f public/* /
+          cp -rf public/* /
